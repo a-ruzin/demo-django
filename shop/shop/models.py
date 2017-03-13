@@ -24,3 +24,6 @@ class Item(models.Model):
 
     def is_new(self):
         return self.pub_date > timezone.now() - timedelta(days=1)
+    is_new.admin_order_field = 'pub_date'
+    is_new.boolean = True
+    is_new.short_description = 'Новый'
