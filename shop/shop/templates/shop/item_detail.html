@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ item.title }}</h1>
+price: {{ item.price }}
+added: {{ item.add_date|date:"Y-m-d" }}
+
+<form action="{% url 'shop:item' pk=item.pk %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+
+<a href="{% url 'shop:index' %}">back</a>
+
+</body>
+</html>

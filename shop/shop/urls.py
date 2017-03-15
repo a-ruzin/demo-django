@@ -18,6 +18,11 @@ from django.contrib import admin
 
 from shop import views
 
+app_name = 'shop'
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.CategoryList.as_view(), name='index'),
+    url(r'^xxx$', views.xxx, name='xxx'),
+    url(r'^(?P<pk>\d*)/$', views.CategoryView.as_view(), name='category'),
+    url(r'^(?P<category_id>\d*)/add_item/$', views.add_item, name='add_item'),
+    url(r'^item/(?P<pk>\d*)/$', views.ItemFormView.as_view(), name='item'),
 ]

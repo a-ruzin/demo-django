@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Hello, world!
+
+<ul>
+{% for category in categories %}
+    <li><a href="{% url 'shop:category' category.pk %}">{{ category.title }}</a></li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
